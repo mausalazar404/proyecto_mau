@@ -15,3 +15,17 @@ elección de longitud (no se como hacerlo)
 contraseña = selección de carácter aleatorio de caracteres hasta llegar a la longitud deseada.
 
 Ef = contraseña"""
+
+#A partir de aqui:
+
+num = '1234567890'
+lower = 'abcdefghijklmnopqrstuvwxyz'
+upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYz'
+esp = '!@#$%&/()='
+
+def contraseña(num,lower,upper,esp):
+    res = num + lower + upper + esp
+    return res
+
+llamada = contraseña(num,lower,upper,esp)
+print(llamada)
