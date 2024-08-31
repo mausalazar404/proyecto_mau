@@ -23,9 +23,15 @@ lower = 'abcdefghijklmnopqrstuvwxyz'
 upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYz'
 esp = '!@#$%&/()='
 
+longitud = int(input("Elige la longitud de tu contraseña (maximo 10 caracteres)"))
+
+if longitud > 10:
+    return 0
+else:
+    return 1
+
+#No se como hacer para que se quede con la longitud que se decida y tampoco para que se hagan random los caracteres
+
 def contraseña(num,lower,upper,esp):
     res = num + lower + upper + esp
     return res
-
-llamada = contraseña(num,lower,upper,esp)
-print(llamada)
