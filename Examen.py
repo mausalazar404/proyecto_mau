@@ -1,32 +1,30 @@
 import random
 
-#caracteres = int(input("numero de caracteres para tu contraseña"))
+caracteres = int(input("número de caracteres para la contraseña (9 o más)"))
 
-"""def crear_numero(num1,num2,num3,num4,num5,num6,num7,num8,num9,num10):
+def crear_numero():
+    return str(random.randint(0,9))
 
-    random_num = random(num1,num2,num3,num4,num5,num6,num7,num8,num9,num10)
-    return random_num
+def crear_min():
+    letras = "abcdefghijklmnopqrstuvwxyz"
+    a = random.randint(0, (len(letras)-1))
+    return letras[a]
 
-llamada = crear_numero(1,2,3,4,5,6,7,8,9,0)
-print(llamada)"""
+def crear_may():
+    letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    a = random.randint(0, (len(letras)-1))
+    return letras[a]
+
+def crear_simb():
+    simbolos = "!#$%&/()=?¡;,.:-_"
+    a = random.randint(0, (len(simbolos)-1))
+    return simbolos[a]
+
+#No se como juntar las variables para que al momento de elegir la londitud acomode las variables aleatoriamente.
 
 
-num = '1234567890'
-lower = 'abcdefghijklmnopqrstuvwxyz'
-upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYz'
-esp = '!@#$%&/()='
-
-longitud = int(input("Elige la longitud de tu contraseña (maximo 10 caracteres)"))
-
-if longitud > 10:
-    return 0
+if caracteres < 8:
+    print("no valido")
 else:
-    return 1
-
-
-def contraseña(num,lower,upper,esp):
-    res = num + lower + upper + esp
-    return res
-
-
+    print("tu contraseña final es")
 
