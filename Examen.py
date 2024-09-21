@@ -1,5 +1,13 @@
 import random
 
+num_de_contrasenas = int(input("¿cuantas contraseñas quieres generar?"))
+
+cont = 0
+while cont < num_de_contrasenas:
+    contrasena = generar_contrasena()
+    cont = cont + 1
+
+
 caracteres = int(input("número de caracteres para la contraseña (9 o más)"))
 
 def crear_numero():
@@ -20,11 +28,15 @@ def crear_simb():
     a = random.randint(0, (len(simbolos)-1))
     return simbolos[a]
 
+def generar_contrasena():
+#Aquí va cuando se gnera la contraseña con los demás datos que no se como poner. 
 #No se como juntar las variables para que al momento de elegir la londitud acomode las variables aleatoriamente.
 
-
-if caracteres < 8:
+if caracteres < 9:
+    ValueError 
     print("no valido")
 else:
     print("tu contraseña final es")
+
+
 
