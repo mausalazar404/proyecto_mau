@@ -37,7 +37,7 @@ def generar_contrasena(longitud_c, funciones):
 
 if caracteres < 9:
     while caracteres < 9:
-        caracteres = int(input("número de caracteres para la contraseña (9 o más)"))
+        caracteres = int(input("TE DIJE QUE número de caracteres para la contraseña (9 o más)"))
 
 contrasena_final = generar_contrasena(caracteres, funciones)
 
