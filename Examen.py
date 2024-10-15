@@ -93,7 +93,7 @@ def guardar_contrasena(contrasena_final):
             espacio_de_guardado.append(lista_cont)
             
             otra = str(input("¿desea generar otra? (Y/N): "))
-            if otra == "Y" or guardar == "y":
+            if otra == "Y" or otra == "y":
                 nueva = generar_contrasena(caracteres, funciones)  
                 lista_cont.append(nueva)
             print("Este es tu espacio con tus contraseñas: ", espacio_de_guardado)
