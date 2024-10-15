@@ -1,39 +1,65 @@
-import random 
-"""Se importó la libreria de python llamada "random". Esta 
+"""Se importó la librería de python llamada "random". Esta 
 proporciona funciones para generar números pseudoaleatorios y realizar 
-acciones aleatorias"""
+acciones aleatorias. Esta información fue obtenida de 
+random — Generate pseudo-random numbers. (n.d.). Python Documentation. 
+https://docs.python.org/es/3/library/random.html"""
+import random 
 
 
-caracteres = int(input("número de caracteres para la contraseña (9 o más): "))
-"""Se asigna el valor a los caracteres"""
+"""Se pidee el número de caracteres y sí no es un número, te pide que 
+lo sea"""
+caracteres = input("Número de caracteres para la contraseña (9 o más): ")
+while not caracteres.isdigit():
+    print("Por favor, ingrese un número válido.")
+    caracteres = input("Número de caracteres para la contraseña (9 o más): ")
 
+"""Se convierte la entrada a entero después de la validación"""
+caracteres = int(caracteres)
+
+"""Este while es para verificar que la contraseña sea mayor de 9
+caracteres"""
+while caracteres < 9:
+    print("El número de caracteres debe ser 9 o más.")
+    caracteres = input("Número de caracteres para la contraseña (9 o más): ")
+    
+    while not caracteres.isdigit():
+        print("Por favor, ingrese un número válido.")
+        caracteres = input("Número de caracteres para la contraseña (9 o más): ")
+    
+    caracteres = int(caracteres)  
 
 def crear_numero():
+    "Esta función sirve para devolver numeros aleatorios del 0 al 9"
     return str(random.randint(0,9))
-"Esta función sirve para devolver numeros aleatorios del 0 al 9"
+
 
 def crear_min():
+    "Esta función devuelve letras aleatorias en minúscula"
     letras = "abcdefghijklmnopqrstuvwxyz"
     a = random.randint(0, (len(letras)-1))
     return letras[a]
-"Esta función genera letras aleatorias en minúscula"
+
 
 def crear_may():
+    "Esta funcion devuelve las letras en mayúscula"
     letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     a = random.randint(0, (len(letras)-1))
     return letras[a]
-"Esta funcion crea genera las letras en mayúscula"
+
 
 def crear_simb():
+    "Esta función devuelve los simbolos aleatoriamente"
     simbolos = "!#$%&/()=?¡;,.:-_"
     a = random.randint(0, (len(simbolos)-1))
     return simbolos[a]
-"Esta función genera los simbolos aleatoriamente"
+
 
 funciones = [crear_numero,crear_min,crear_may,crear_simb]
 """Se crea una variable que llama a las funciones anteriores"""
 
 def generar_contrasena(longitud_c, funciones):
+    """Esta función recibe la longitúd y las funciones anteriores
+    para generar la contraseña final. Devuelve la contraseña final"""
     contrasena = ""
     for caracteres in range(longitud_c):
         rand_index = random.randint(0, len(funciones)-1)
@@ -43,18 +69,22 @@ def generar_contrasena(longitud_c, funciones):
     return contrasena
 
 
-if caracteres < 9:
-    while caracteres < 9:
-        caracteres = int(input("TE DIJE QUE número de caracteres para la contraseña (9 o más): "))
-
 contrasena_final = generar_contrasena(caracteres, funciones)
 
+"""Se imprime una vista previa de tu contraseña final"""
 print("tu contraseña final es:", contrasena_final)
 
+
 def guardar_contrasena(contrasena_final):
+    
+    """Esta función se crea para guardar la contraseña. La función recibe
+    la contraseña final y pregunta si quieres guardar la contraseña para 
+    ponerle un nombre al apartado de guardado. Finalmente devuelve el 
+    apartado con tu contraseña"""
+
     guardar = str(input("¿Desea guardar su contraseña? (Y/N): "))
     while True:
-        if guardar == "Y":
+        if guardar == "Y" or guardar == "y":
             espacio_de_guardado = []
             lista_cont = []
             nombre = str(input("¿Cómo desea llamar su espacio de guardado?: "))
@@ -63,7 +93,7 @@ def guardar_contrasena(contrasena_final):
             espacio_de_guardado.append(lista_cont)
             
             otra = str(input("¿desea generar otra? (Y/N): "))
-            if otra == "Y":
+            if otra == "Y" or guardar == "y":
                 nueva = generar_contrasena(caracteres, funciones)  
                 lista_cont.append(nueva)
             print("Este es tu espacio con tus contraseñas: ", espacio_de_guardado)
@@ -71,11 +101,7 @@ def guardar_contrasena(contrasena_final):
         else:
             print("Contraseña final: ", contrasena_final)
             break
-"""Se crea una función para guardar la contraseña. Pregunta si quieres guardar
-la contraseña, si le pones que sí, se crea una lista para la cual te pide un
-nombre. La función agrega la contraseña a una lista y esa lista a la lista
-de guardado. Finalmente te pide si quieres crear una contraseña nueva para 
-guardarla en el espacio de guardado. Si le pones que no"""
+
 
 guardar_contrasena(contrasena_final)
 """Se manda a llamar a la función"""
@@ -83,8 +109,3 @@ guardar_contrasena(contrasena_final)
 print("Gracias :)")
 """Se imprime un "Gracias" """
         
-
-
-
-
-
