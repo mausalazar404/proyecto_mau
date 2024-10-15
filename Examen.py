@@ -24,7 +24,8 @@ while caracteres < 9:
     
     while not caracteres.isdigit():
         print("Por favor, ingrese un número válido.")
-        caracteres = input("Número de caracteres para la contraseña (9 o más): ")
+        caracteres = input("Número de caracteres para la contraseña (9 o más): \
+                           ")
     
     caracteres = int(caracteres)  
 
@@ -96,7 +97,8 @@ def guardar_contrasena(contrasena_final):
             if otra == "Y" or otra == "y":
                 nueva = generar_contrasena(caracteres, funciones)  
                 lista_cont.append(nueva)
-            print("Este es tu espacio con tus contraseñas: ", espacio_de_guardado)
+            print("Este es tu espacio con tus contraseñas: ", \
+                  espacio_de_guardado)
             return espacio_de_guardado 
         else:
             print("Contraseña final: ", contrasena_final)
