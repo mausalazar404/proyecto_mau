@@ -120,8 +120,11 @@ def guardar_contrasena(contrasena_final):
     Devuelve el apartado con tu contraseña
     """
 
+def guardar_contrasena():
     guardar = str(input("¿Desea ponerle un título a su contraseña? (Y/N): "))
-    while True:
+    
+    continuar = True  
+    while continuar:
         if guardar == "Y" or guardar == "y":
             espacio_de_guardado = []
             lista_cont = []
@@ -131,19 +134,19 @@ def guardar_contrasena(contrasena_final):
             lista_cont.append(contrasena_final)
             espacio_de_guardado.append(lista_cont)
             
-            otra = str(input("¿desea generar otra? (Y/N): "))
+            otra = str(input("¿Desea generar otra? (Y/N): "))
             if otra == "Y" or otra == "y":
                 nueva = generar_contrasena(caracteres, funciones)  
                 lista_cont.append(nueva)
             print("Este es tu espacio con tus contraseñas: ", \
                   espacio_de_guardado)
-            return espacio_de_guardado 
+            return espacio_de_guardado
         else:
             print("Contraseña final: ", contrasena_final)
-            break
+            continuar = False  
 
 
-guardar_contrasena(contrasena_final)
+guardar_contrasena()
 """
 Se manda a llamar a la función
 """
