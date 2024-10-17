@@ -125,7 +125,7 @@ def guardar_contrasena(contrasena_final):
         if guardar == "Y" or guardar == "y":
             espacio_de_guardado = []
             lista_cont = []
-            nombre = str(input("¿Cómo desea llamar su espacio de guardado?: "))
+            nombre = str(input("¿Cómo desea llamar su espacio de contraseña?: "))
             espacio_de_guardado.append(nombre)
             lista_cont.append(contrasena_final)
             espacio_de_guardado.append(lista_cont)
