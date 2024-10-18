@@ -111,16 +111,13 @@ print("tu contraseña final es:", contrasena_final)
 """
 
 
-def guardar_contrasena(contrasena_final):
-    
+def guardar_contrasena():
     """
     (funcionees, listas, listas anidadas, ciclos, condicionales)
     Recibe la contraseña final 
     Mete la contraseña a un espacio de guardado
     Devuelve el apartado con tu contraseña
     """
-
-def guardar_contrasena():
     guardar = str(input("¿Desea ponerle un título a su contraseña? (Y/N): "))
     
     continuar = True  
